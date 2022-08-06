@@ -8,6 +8,8 @@ HOST_IP=localhost
 
 KUBE_PATH=/home/ubuntu/.kube/config
 
+DNS=true
+
 
 # Run the script 
 
