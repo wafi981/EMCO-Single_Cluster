@@ -1,6 +1,7 @@
 # Single Cluster Example
 
 
+
 ## Changing config files
 
 /home/ubuntu/work/emco-base/examples/single-cluster
@@ -12,6 +13,7 @@ HOST_IP=localhost
 KUBE_PATH=/home/ubuntu/.kube/config
 
 DNS=true
+
 
 
 ## Run the script 
@@ -30,8 +32,33 @@ Output files of this command are:
 
 Helm charts and profile tarballs for all the usecases.
 
-## Next step
+
+
+## Applying prerequisites to run tests
+
+Apply prerequisites.yaml. This is required for all the tests. This creates controllers, one project, one cluster, a logical cloud. This step is required to be done only once for all usecases:
+
 ```
 emcoctl --config emco-cfg.yaml apply -f prerequisites.yaml -v values.yaml
 
 ```
+
+
+
+## Instantiating Logical Cloud over the cluster
+
+```
+emcoctl --config emco-cfg.yaml apply -f instantiate-lc.yaml -v values.yaml
+```
+
+
+
+## Running test cases
+
+Prometheus and collectd usecase
+
+```
+emcoctl --config emco-cfg.yaml apply -f test-prometheus-collectd-deployment.yaml -v values.yaml
+emcoctl --config emco-cfg.yaml apply -f test-prometheus-collectd-instantiate.yaml -v values.yaml
+```
+
