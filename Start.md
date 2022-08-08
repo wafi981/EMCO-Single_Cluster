@@ -1,4 +1,7 @@
-# Changing config files
+# Single Cluster Example
+
+
+## Changing config files
 
 /home/ubuntu/work/emco-base/examples/single-cluster
 
@@ -11,7 +14,7 @@ KUBE_PATH=/home/ubuntu/.kube/config
 DNS=true
 
 
-# Run the script 
+## Run the script 
 
 ```
 ./setup.sh create
@@ -27,7 +30,7 @@ Output files of this command are:
 
 Helm charts and profile tarballs for all the usecases.
 
-# Next step
+## Next step
 ```
 emcoctl --config emco-cfg.yaml apply -f prerequisites.yaml -v values.yaml
 
